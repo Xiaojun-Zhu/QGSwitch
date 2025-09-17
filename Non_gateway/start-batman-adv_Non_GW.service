@@ -1,0 +1,14 @@
+[Unit]
+Description=Start batman-adv mesh gateway at boot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+
+ExecStart=/home/pi/start-batman-adv_Non_GW.sh
+RemainAfterExit=true
+User=root
+
+[Install]
+WantedBy=multi-user.target
